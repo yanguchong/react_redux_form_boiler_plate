@@ -1,0 +1,46 @@
+{
+    "name": "client",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "build:dev": "webpack -d --config=webpack.master.js --env.environment=dev --watch",
+        "build:prod": "webpack -p --config=webpack.master.js --env.environment=prod",
+        "build:prod-debug": "webpack -d --config=webpack.master.js --env.environment=prod"
+    },
+    "dependencies": {
+        "babel-core": "^6.26.0",
+        "babel-polyfill": "^6.26.0",
+        "css-loader": "^0.28.7",
+        "immutable": "^3.8.2",
+        "react": "^16.0.0",
+        "react-dom": "^16.0.0",
+        "react-modal": "^3.1.2",
+        "react-redux": "^5.0.6",
+        "react-responsive-modal": "^2.0.0",
+        "react-router-dom": "^4.2.2",
+        "redux": "^3.7.2",
+        "redux-form": "^7.3.0",
+        "redux-logger": "^3.0.6",
+        "redux-saga": "^0.15.6",
+        "sprintf-js": "^1.1.1",
+        "style-loader": "^0.19.0",
+        "tape": "^4.8.0"
+    },
+    "devDependencies": {
+        "babel-loader": "^7.1.2",
+        "babel-preset-env": "^1.6.0",
+        "babel-preset-es2015": "^6.24.1",
+        "babel-preset-react": "^6.24.1",
+        "babel-preset-stage-0": "^6.24.1",
+        "prop-types": "^15.6.0",
+        "redux-devtools": "^3.4.0",
+        "sass-loader": "^6.0.6",
+        "uglifyjs-webpack-plugin": "^1.1.4",
+        "webpack": "^3.6.0",
+        "webpack-merge": "^4.1.1"
+    },
+    "author": "",
+    "license": "ISC"
+}

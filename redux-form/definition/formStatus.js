@@ -1,0 +1,5 @@
+export default {
+	SUBMITTED: 'SUBMITTED',
+	SUCCESS:'SUCCESS',
+	FAIL: 'FAIL'
+}
