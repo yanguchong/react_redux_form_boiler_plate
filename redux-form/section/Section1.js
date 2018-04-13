@@ -1,6 +1,6 @@
 import {Field, FormSection} from "redux-form";
 import React from "react";
-import { renderField }from "../fields/renderField";
+import { renderField }from "../module/renderField";
 import {required} from "../module/validation";
 
 class Section1 extends React.Component {

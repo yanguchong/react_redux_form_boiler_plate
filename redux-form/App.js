@@ -1,11 +1,12 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {withRouter} from 'react-router-dom';
-import {debug} from './config';
 import getFormSections from "./module/getFormSections";
-import { Field, reduxForm } from 'redux-form';
-import Actions, { fireAction } from './Actions';
+import { reduxForm } from 'redux-form';
+import { fireAction } from './Actions';
 import formStatus from './definition/formStatus';
+import onSubmit from './module/onSubmit';
+import onSubmitFail from './module/onSubmitFail';
 
 class App extends React.Component {
     constructor(props){
@@ -33,45 +34,8 @@ class App extends React.Component {
 
 App = reduxForm({
 	form: 'app',
-    /*
-    * onSubmit is not optional, contradictory to the documentation
-    *
-    * this will be called if the form is completely validated
-    *
-    * v = values
-    * d = dispatch
-    * p = props
-    * */
-    onSubmit: (v, d, p)=> {
-
-        return new Promise((resolve)=> {
-	        d({
-		        type: Actions.FORM_SUBMITTED,
-		        payload: v
-	        });
-
-	        /*
-	        * inconsistent behavior, if you do not resolve, then you can not submit anymore after this
-	        * function runs once. This may not be a bad thing though, since we consider the form submit a success
-	        * and the user should be shown a thank you.  It also prevent resubmits.
-	        *
-	        * If you resolve, then you can continually submit.
-	        *
-	        * */
-	        //resolve(true);
-        });
-    },
-    /*
-    * this will be called if the form fails validation
-    *
-    * e = errors
-    * d = dispatch
-    * se = submitError, the error object that caused the submission to fail
-    * p = props
-    * */
-    onSubmitFail: (e, d, se, p) => {
-	    console.log(e);
-    }
+	onSubmit: onSubmit,
+	onSubmitFail: onSubmitFail
 })(App);
 
 function mapDispatchToProps(dispatch, ownProps){
