@@ -5,8 +5,9 @@ import getFormSections from "./module/getFormSections";
 import { reduxForm } from 'redux-form';
 import { fireAction } from './Actions';
 import formStatus from './definition/formStatus';
-import onSubmit from './module/onSubmit';
-import onSubmitFail from './module/onSubmitFail';
+import onSubmit from './module/formEventHandlers/onSubmit';
+import onSubmitFail from './module/formEventHandlers/onSubmitFail';
+import asyncValidate from './module/validation/asyncValidate';
 
 class App extends React.Component {
     constructor(props){
@@ -35,7 +36,9 @@ class App extends React.Component {
 App = reduxForm({
 	form: 'app',
 	onSubmit: onSubmit,
-	onSubmitFail: onSubmitFail
+	onSubmitFail: onSubmitFail,
+	asyncValidate: asyncValidate,
+	asyncBlurFields:['login.username', 'login.password']
 })(App);
 
 function mapDispatchToProps(dispatch, ownProps){

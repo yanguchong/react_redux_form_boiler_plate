@@ -1,7 +1,7 @@
 import {Field, FormSection} from "redux-form";
 import React from "react";
 import { renderField }from "../module/renderField";
-import {required} from "../module/validation";
+import {required} from "../module/validation/validationRules";
 
 class Section1 extends React.Component {
 	render() {

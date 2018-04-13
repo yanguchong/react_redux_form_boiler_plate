@@ -4,7 +4,12 @@ const minValue = min => value =>
 	value && value < min ? `Must be at least ${min}` : undefined;
 
 
-export const required = value => (value ? undefined : 'Required');
+export const required = (value) => {
+	return value ? undefined : 'Required'
+	// return new Promise((resolve)=> {
+	// 	resolve(true);
+	// })
+};
 export const maxLength = max => value =>
 	value && value.length > max ? `Must be ${max} characters or less` : undefined;
 export const maxLength15 = maxLength(15);
