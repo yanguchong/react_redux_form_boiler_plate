@@ -8,5 +8,8 @@ router.get('/master-form', function(req, res, next) {
 router.get('/redux-form', function(req, res, next) {
   res.render('redux_form', { title: 'Express' });
 });
+router.get('/', function(req, res, next) {
+  res.render('redux_form', { title: 'Express' });
+});
 
 module.exports = router;

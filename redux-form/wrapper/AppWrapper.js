@@ -12,6 +12,8 @@ class AppWrapper extends React.Component {
         return (
             <Router>
                 <div>
+                    <h2>Routing Demo</h2>
+                    <hr />
                     <ul>
                         <li>
                             <Link to="/redux-form/">Home</Link>
@@ -24,12 +26,17 @@ class AppWrapper extends React.Component {
                         </li>
                     </ul>
 
+                    <h2>Page Content</h2>
                     <hr />
 
                     <Route exact path="/redux-form/" component={App} />
                     <Route path="/redux-form/thank-you" component={AppThankYou} />
                     <Route path="/redux-form/contact-us" component={AppContactUs} />
+                    <ul>
+                        <li><a href="/tmp">View Posted Files</a></li>
+                    </ul>
                 </div>
+
             </Router>
         );
     }

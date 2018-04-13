@@ -7,6 +7,7 @@ import {required} from "../module/validation/validationRules";
 class LoginSection extends React.Component {
 	render() {
 		return (
+
 			<FormSection name="login">
 				<div>
 					<label htmlFor="username">username</label>

@@ -1,10 +1,10 @@
 import {all, call, put, takeLatest} from "redux-saga/effects";
 import ACTIONS from "./Actions";
-import Api from "../shared/Api";
+import Api from "../shared/api/";
 
 function* helloWorldAction(action){
     try {
-        const result = yield call(Api.test.testApiCall);
+        const result = yield call(Api.testApiCall);
 
 
             const putAction = {
@@ -26,7 +26,7 @@ function* helloWorldAction(action){
 function* formSubmittedAction(action){
     try {
         /* TODO: replace with real api */
-        const result = yield call(Api.test.testApiCall);
+        const result = yield call(Api.testApiCall);
 
             const putAction = {
                 "type": ACTIONS.FORM_SUBMITTED_SUCCESS,
