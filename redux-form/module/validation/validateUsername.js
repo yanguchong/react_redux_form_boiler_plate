@@ -1,6 +1,12 @@
 import Api from '../../../shared/api/';
 
-
+/*
+* getting state and modifying state should always be done in a reducer
+* but the way redux form is setup, this this is the best option, at least I think so
+*
+* also, this is not modifying redux state directly, redux form is taking care of the work, we're just
+* setting up a suggestion
+*/
 function getState(p){
 	let newErrors;
 
@@ -32,9 +38,11 @@ const validate = (value, props, resolve) => {
 			console.log(data);
 
 			//if no errors do nothing
-			if (data.isValid){
+			if (!data.isValid){
 				resolve(state);
 			}
+
+			resolve();
 
 			//were all good do nothing
 		});

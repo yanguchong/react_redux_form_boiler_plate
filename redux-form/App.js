@@ -14,16 +14,20 @@ class App extends React.Component {
         super(props);
     };
 
+    submit = (e)=> {
+    	console.log('hello')
+    };
+
     render(){
 
-	    const { handleSubmit } = this.props;
+	    const { handleSubmit, submitting } = this.props;
         return(
             <form onSubmit={handleSubmit}>
 	            {this.props.formStatus.current !== formStatus.SUCCESS &&
 	                getFormSections([2, 1])
 	            }
 	            {this.props.formStatus.current !== formStatus.SUCCESS &&
-		            <p><button type="submit" onClick={this.onSubmit}>Submit</button></p>
+		            <p><button type="submit" onClick={this.onSubmit} disabled={submitting}>Submit</button></p>
 	            }
                 {this.props.formStatus.current === formStatus.SUCCESS &&
 	                getFormSections([3])
@@ -35,6 +39,7 @@ class App extends React.Component {
 
 App = reduxForm({
 	form: 'app',
+	// onSubmit: ()=> { debugger; },
 	onSubmit: onSubmit,
 	onSubmitFail: onSubmitFail,
 	asyncValidate: asyncValidate,

@@ -23,7 +23,7 @@ const asyncValidate = (v, d, p, f) => {
 	}
 
 	//do nothing if field is not matched
-	return new Promise((resolve)=> {});
+	return new Promise((resolve)=> {resolve()});
 
 
 	// return new Promise((resolve, reject)=> {

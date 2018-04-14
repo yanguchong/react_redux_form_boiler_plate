@@ -31,9 +31,11 @@ const validate = (value, props, resolve) => {
 			console.log(data);
 
 			//if no errors do nothing
-			if (data.isValid){
+			if (!data.isValid){
 				resolve(state);
 			}
+
+			resolve();
 
 			//were all good do nothing
 		});

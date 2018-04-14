@@ -16,3 +16,7 @@ export const debugBlock = (f) => {
 		f();
 	}
 };
+
+export const getBaseUrl = () => {
+
+};

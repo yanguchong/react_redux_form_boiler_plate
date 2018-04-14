@@ -1,4 +1,5 @@
-import Actions from '../../Actions'
+import Actions from '../../Actions';
+import Api from '../../../shared/api/';
 /*
 * onSubmit is not optional, contradictory to the documentation
 *
@@ -10,11 +11,27 @@ import Actions from '../../Actions'
 * */
 const onSubmit = (v, d, p) => {
 
-	return new Promise((resolve)=> {
-		d({
-			type: Actions.FORM_SUBMITTED,
-			payload: v
-		});
+	const api = Api;
+
+	return new Promise((resolve, reject)=> {
+		// d({
+		// 	type: Actions.FORM_SUBMITTED,
+		// 	payload: v
+		// });
+
+		api.submitForm(v)
+			.then(data => {
+				console.log(data);
+
+				//if no errors do nothing
+				if (data.status === 'success'){
+					resolve(true);
+				}
+
+				reject(false);
+
+				//were all good do nothing
+			});
 
 		/*
 		* inconsistent behavior, if you do not resolve, then you can not submit anymore after this

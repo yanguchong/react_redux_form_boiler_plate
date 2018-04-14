@@ -7,7 +7,9 @@
 * p = props
 * */
 const onSubmitFail =  (e, d, se, p) => {
-	console.log(e);
+	return new Promise((resolve)=> {
+		resolve(false);
+	});
 };
 
 export default onSubmitFail;
