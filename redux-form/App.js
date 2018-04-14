@@ -3,7 +3,6 @@ import {connect} from 'react-redux';
 import {withRouter} from 'react-router-dom';
 import getFormSections from "./module/getFormSections";
 import { reduxForm } from 'redux-form';
-import { fireAction } from './Actions';
 import formStatus from './definition/formStatus';
 import onSubmit from './module/formEventHandlers/onSubmit';
 import onSubmitFail from './module/formEventHandlers/onSubmitFail';
@@ -39,7 +38,6 @@ class App extends React.Component {
 
 App = reduxForm({
 	form: 'app',
-	// onSubmit: ()=> { debugger; },
 	onSubmit: onSubmit,
 	onSubmitFail: onSubmitFail,
 	asyncValidate: asyncValidate,

@@ -28,5 +28,8 @@ export function loadParam(message){
     }
 }
 
+export function fireAction(action){
+    return action;
+}
 
 export default {...APP_ACTIONS}
