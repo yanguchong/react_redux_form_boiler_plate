@@ -1,19 +1,15 @@
 import React from 'react';
+import {debug} from "../Logger";
 
-export const renderField = (
-	{
-		input,
-		label,
-		type,
-		meta:{asyncValidating, touched, error, warning}
-	}) => {
+export const renderField = (field) => {
+
 	return <div>
-		<label>{label}</label>
-		<div className={asyncValidating ? 'async-validating' : ''}>
-			<input {...input} placeholder={label} type={type} />
-			{touched &&
-			((error && <span>{error}</span>) ||
-				(warning && <span>{warning}</span>))}
+		<label>{field.label}</label>
+		<div className={field.meta.asyncValidating ? 'async-validating' : ''}>
+			<input {...field.input} placeholder={field.label} type={field.type} />
+			{field.meta.touched &&
+			((field.meta.error && <span>{field.meta.error}</span>) ||
+				(field.meta.warning && <span>{field.meta.warning}</span>))}
 		</div>
 	</div>
 };

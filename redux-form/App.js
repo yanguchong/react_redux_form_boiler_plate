@@ -41,7 +41,7 @@ App = reduxForm({
 	onSubmit: onSubmit,
 	onSubmitFail: onSubmitFail,
 	asyncValidate: asyncValidate,
-	asyncBlurFields:['login.username', 'login.password']
+	// asyncBlurFields:['login.username', 'login.password']
 })(App);
 
 function mapDispatchToProps(dispatch, ownProps){

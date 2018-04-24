@@ -10,6 +10,19 @@ export const required = (value) => {
 	// 	resolve(true);
 	// })
 };
+
+export const verify = (section, field) => (value, values, props, name) => {
+	const err = "Field must match '" + field + '"';
+
+	if (!values[section] || !values[section][field]) {
+		return err;
+	}
+
+	return values[section][field] === value ? undefined : err;
+};
+
+export const verifyEmail = verify("login", "email");
+
 export const maxLength = max => value =>
 	value && value.length > max ? `Must be ${max} characters or less` : undefined;
 export const maxLength15 = maxLength(15);

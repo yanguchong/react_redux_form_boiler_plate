@@ -1,4 +1,4 @@
-import Section1 from '../section/Section1';
+import Section1 from '../section/UserSection';
 import LoginSection from '../section/LoginSection';
 import React from "react";
 import ThankYouSection from "../section/ThankYouSection";
