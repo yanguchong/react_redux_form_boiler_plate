@@ -1,9 +1,8 @@
 import {Field, FormSection} from "redux-form";
 import React from "react";
 import {renderField} from "../module/renderField";
-import {required, verifyEmail, minLength2} from "../module/validation/validationRules";
-import verifyValidation from "../module/validation/validateVerifyField";
-import {validatePlain} from "../module/validation/validatePlain";
+import {required, verifyEmail, radio_required} from "../module/validation/validationRules";
+import {renderRadioGroup} from "../module/renderRadioGroup"
 
 
 class LoginSection extends React.Component {
@@ -43,6 +42,17 @@ class LoginSection extends React.Component {
 						       type="text"/>
 					</div>
 				</fieldset>
+				{renderRadioGroup("test1", [
+					{
+						"key": "test1",
+						"value": "test1"
+					},
+					{
+						"key": "test2",
+						"value": "test2"
+					},
+
+				])}
 			</FormSection>
 		)
 	}

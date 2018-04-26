@@ -11,6 +11,13 @@ export const required = (value) => {
 	// })
 };
 
+export const radio_required = (value) => {
+	return value ? undefined : 'Please make sure an option is selected'
+	// return new Promise((resolve)=> {
+	// 	resolve(true);
+	// })
+};
+
 export const verify = (section, field) => (value, values, props, name) => {
 	const err = "Field must match '" + field + '"';
 
@@ -20,6 +27,7 @@ export const verify = (section, field) => (value, values, props, name) => {
 
 	return values[section][field] === value ? undefined : err;
 };
+
 
 export const verifyEmail = verify("login", "email");
 

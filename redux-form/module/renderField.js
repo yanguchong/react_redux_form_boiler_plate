@@ -1,5 +1,4 @@
 import React from 'react';
-import {debug} from "../Logger";
 
 export const renderField = (field) => {
 
